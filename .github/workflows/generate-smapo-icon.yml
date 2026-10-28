@@ -1,0 +1,27 @@
+name: Generate 512px SMAPO icon
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/generate-smapo-icon.yml'
+permissions:
+  contents: write
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate icon
+        run: |
+          python3 -m pip install --user pillow
+          python3 - <<'PY'
+          from PIL import Image
+          im = Image.open('assets/app_icon.png').convert('RGBA')
+          im.resize((512, 512), Image.Resampling.LANCZOS).save('assets/icon-512.png')
+          PY
+      - name: Commit result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/icon-512.png
+          git diff --cached --quiet || (git commit -m "Add 512px SMAPO icon for PWA" && git push)
