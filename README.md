@@ -1,0 +1,1 @@
+すまぽっけ V35.2 のGitHub Pages版です。GitHub Pagesで main / root を選んで公開してください。データは端末内に保存されます。Firebase接続情報が未設定のため端末間同期はまだできません。

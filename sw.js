@@ -1,7 +1,8 @@
-self.addEventListener('install', (e) => {
-  console.log('[Service Worker] Install');
-});
-
-self.addEventListener('fetch', (e) => {
-  e.respondWith(fetch(e.request));
-});
+/* すまぽっけ v35.2 shell cache: personal data is never cached here. */
+const CACHE='sumapokke-shell-v35_2-github';
+const FILES=["./index.html","./script.js","./style.css","./firebase-config.js","./manifest.webmanifest","./assets/app_icon.png","./assets/background_quest.svg","./assets/background_room.svg","./assets/background_theater.svg","./assets/mascot_chan.webp","./assets/mascot_chan_sad.webp","./assets/mascot_chan_sleepy.webp","./assets/mascot_chan_surprise.webp","./assets/mascot_chan_thinking.webp","./assets/mascot_chan_wink.webp","./assets/mascot_kun.webp","./assets/mascot_kun_sad.webp","./assets/mascot_kun_sleepy.webp","./assets/mascot_kun_surprise.webp","./assets/mascot_kun_thinking.webp","./assets/mascot_kun_wink.webp","./assets/pokke_bgm.mp3"];
+const ALLOWED=new Set(FILES.map(p=>new URL(p,self.registration.scope).pathname));
+self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES)).then(()=>self.skipWaiting())));
+self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k.startsWith('sumapokke-shell-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
+self.addEventListener('fetch',e=>{const r=e.request,u=new URL(r.url);if(r.method!=='GET'||u.origin!==self.location.origin||!ALLOWED.has(u.pathname))return;if(r.mode==='navigate'){e.respondWith(fetch(r).catch(()=>caches.match('./index.html')));return;}e.respondWith(caches.match(r).then(c=>c||fetch(r)));});
+self.addEventListener('notificationclick',e=>{e.notification.close();e.waitUntil((async()=>{const a=await clients.matchAll({type:'window',includeUncontrolled:true}),t=a.find(c=>c.url.startsWith(self.registration.scope));if(t){await t.focus();t.postMessage({kind:'sumapokke-notification-click'});}else await clients.openWindow('./index.html');})());});
