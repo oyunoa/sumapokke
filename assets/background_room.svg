@@ -1,1 +1,44 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 920" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="wall" x2=".7" y2="1"><stop stop-color="#cfe7f5"/><stop offset=".37" stop-color="#e9e9f4"/><stop offset="1" stop-color="#f7ddda"/></linearGradient><linearGradient id="sky" x2=".1" y2="1"><stop stop-color="#95cff0"/><stop offset=".56" stop-color="#daeefa"/><stop offset="1" stop-color="#fbe9bf"/></linearGradient><linearGradient id="frame"><stop stop-color="#fffefb"/><stop offset="1" stop-color="#bea8a6"/></linearGradient><linearGradient id="floor" x2="0" y2="1"><stop stop-color="#f5ddc8"/><stop offset=".7" stop-color="#dfbcaa"/><stop offset="1" stop-color="#bd98a0"/></linearGradient><linearGradient id="curtain"><stop stop-color="#d5b8ce"/><stop offset=".65" stop-color="#ffeced"/><stop offset="1" stop-color="#d5b9ca"/></linearGradient><radialGradient id="glow"><stop stop-color="#fffbdc" stop-opacity=".84"/><stop offset="1" stop-color="#fffbdc" stop-opacity="0"/></radialGradient></defs><path fill="url(#wall)" d="M0 0H430V765H0Z"/><path d="M52 704V421Q52 310 215 310Q378 310 378 421V704Z" fill="#c7aeba" stroke="#fdf8f5" stroke-width="19"/><path d="M70 681V424Q70 332 215 332Q360 332 360 424V681Z" fill="url(#sky)"/><path d="M70 636Q144 590 227 625Q304 586 360 635V681H70Z" fill="#9cc6aa" opacity=".34"/><path d="M70 657Q135 629 197 655Q290 621 360 644V681H70Z" fill="#74a4a5" opacity=".27"/><circle cx="292" cy="391" r="70" fill="url(#glow)"/><g opacity=".34"><path d="M85 680V603M344 678V590" stroke="#8ca47c" stroke-width="5"/><g fill="#95b795"><circle cx="84" cy="595" r="37"/><circle cx="119" cy="612" r="22"/><circle cx="338" cy="584" r="40"/><circle cx="366" cy="611" r="19"/></g></g><path d="M215 332V678 M70 515H360" stroke="#fffdf9" stroke-width="13" stroke-opacity=".73"/><path d="M46 694H384" stroke="#fffdf9" stroke-width="24" stroke-linecap="round"/><path d="M22 280Q10 401 22 498Q30 601 8 706L46 704Q70 545 56 414Q57 331 43 283Z" fill="url(#curtain)" opacity=".64"/><path d="M410 280Q421 386 412 512Q401 606 425 704L389 704Q364 550 380 406Q378 342 394 282Z" fill="url(#curtain)" opacity=".64"/><path d="M0 706H430V920H0Z" fill="url(#floor)"/><path d="M0 716H430 M0 755H430 M0 807H430 M0 877H430" stroke="#b99a8f" stroke-width="1.8" opacity=".36"/><path d="M215 717L104 920 M215 717L333 920 M215 717L19 920 M215 717L408 920" fill="none" stroke="#c8a89a" opacity=".32"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 920" preserveAspectRatio="xMidYMid slice">
+<defs>
+ <linearGradient id="wall" x2=".7" y2="1"><stop stop-color="#cfe7f5"/><stop offset=".37" stop-color="#e9e9f4"/><stop offset="1" stop-color="#f7ddda"/></linearGradient>
+ <linearGradient id="windowSky" x2=".1" y2="1"><stop stop-color="#95cff0"/><stop offset=".56" stop-color="#daeefa"/><stop offset="1" stop-color="#fbe9bf"/></linearGradient>
+ <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff" stop-opacity=".46"/><stop offset=".31" stop-color="#fff" stop-opacity=".02"/><stop offset=".68" stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#bcd5ef" stop-opacity=".1"/></linearGradient>
+ <linearGradient id="frame" x1="0" y1="0" x2=".6" y2="1"><stop stop-color="#fffefb"/><stop offset=".47" stop-color="#f7e6dc"/><stop offset="1" stop-color="#bea8a6"/></linearGradient>
+ <linearGradient id="floor" x1="0" x2="0" y2="1"><stop stop-color="#f5ddc8"/><stop offset=".7" stop-color="#dfbcaa"/><stop offset="1" stop-color="#bd98a0"/></linearGradient>
+ <linearGradient id="leftCurtain"><stop stop-color="#d5b8ce"/><stop offset=".65" stop-color="#ffeced"/><stop offset="1" stop-color="#d5b9ca"/></linearGradient>
+ <linearGradient id="sunlight" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#fff8ca" stop-opacity=".45"/><stop offset="1" stop-color="#fff7d2" stop-opacity="0"/></linearGradient>
+ <radialGradient id="glow"><stop stop-color="#fffbdc" stop-opacity=".84"/><stop offset="1" stop-color="#fffbdc" stop-opacity="0"/></radialGradient>
+ <filter id="blur"><feGaussianBlur stdDeviation="14"/></filter>
+ <filter id="soft"><feGaussianBlur stdDeviation="4"/></filter>
+ <pattern id="wallWeave" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M0 0L8 8 M-4 0L4 8" stroke="#fff" stroke-width=".35" opacity=".24"/></pattern>
+ <pattern id="wood" width="64" height="19" patternUnits="userSpaceOnUse"><path d="M0 2Q32 5 64 2 M-2 16Q32 14 66 16" stroke="#995f59" stroke-opacity=".09" fill="none"/></pattern>
+ </defs>
+ <path fill="url(#wall)" d="M0 0H430V765H0Z"/><path fill="url(#wallWeave)" d="M0 0H430V755H0Z"/>
+ <path fill="#fff" opacity=".16" d="M30 0H34V740H30Z M395 0H399V740H395Z"/>
+ <!-- Window depth / arched wood frame -->
+ <rect x="34" y="282" width="366" height="427" rx="154" fill="#725e6c" opacity=".13" filter="url(#blur)"/>
+ <path d="M52 704V421Q52 310 215 310Q378 310 378 421V704Z" fill="#c7aeba" stroke="#fdf8f5" stroke-width="19"/>
+ <path d="M70 681V424Q70 332 215 332Q360 332 360 424V681Z" fill="url(#windowSky)"/>
+ <path d="M70 636Q144 590 227 625Q304 586 360 635V681H70Z" fill="#9cc6aa" opacity=".34"/>
+ <path d="M70 657Q135 629 197 655Q290 621 360 644V681H70Z" fill="#74a4a5" opacity=".27"/>
+ <circle cx="292" cy="391" r="70" fill="url(#glow)"/>
+ <g fill="#fff" opacity=".68" filter="url(#soft)"><ellipse cx="130" cy="433" rx="43" ry="9"/><ellipse cx="266" cy="458" rx="58" ry="11"/></g>
+ <!-- leafy distant trees -->
+ <g opacity=".34"><path d="M85 680V603M344 678V590" stroke="#8ca47c" stroke-width="5"/><g fill="#95b795"><circle cx="84" cy="595" r="37"/><circle cx="119" cy="612" r="22"/><circle cx="338" cy="584" r="40"/><circle cx="366" cy="611" r="19"/></g></g>
+ <path d="M71 677V427Q72 332 215 332Q359 332 359 427V677Z" fill="url(#glass)"/>
+ <path d="M215 332V678 M70 515H360" stroke="#fffdf9" stroke-width="13" stroke-opacity=".73"/><path d="M215 332V678 M70 515H360" stroke="#978fa5" stroke-width="2" stroke-opacity=".21"/>
+ <path d="M46 694H384" stroke="#fffdf9" stroke-width="24" stroke-linecap="round"/><path d="M44 709H386" stroke="#ab8d98" stroke-opacity=".26" stroke-width="8"/>
+ <!-- curtains with velvet-like folds -->
+ <path d="M22 280Q10 401 22 498Q30 601 8 706L46 704Q70 545 56 414Q57 331 43 283Z" fill="url(#leftCurtain)" opacity=".64"/>
+ <path d="M410 280Q421 386 412 512Q401 606 425 704L389 704Q364 550 380 406Q378 342 394 282Z" fill="url(#leftCurtain)" opacity=".64"/>
+ <path d="M18 288Q35 350 29 551M413 293Q393 374 401 564" stroke="#fff" stroke-width="5" fill="none" opacity=".34"/>
+ <!-- oak floor, perspective -->
+ <path d="M0 706H430V920H0Z" fill="url(#floor)"/><path d="M0 706H430V920H0Z" fill="url(#wood)"/>
+ <path d="M0 716L430 716 M0 755L430 755 M0 807L430 807 M0 877L430 877" stroke="#b99a8f" stroke-width="1.8" opacity=".36"/>
+ <path d="M215 717L104 920 M215 717L333 920 M215 717L19 920 M215 717L408 920" fill="none" stroke="#c8a89a" opacity=".32"/>
+ <path d="M0 707L430 707" stroke="#fff0e8" stroke-width="11" opacity=".85"/>
+ <path d="M0 712L430 712" stroke="#70505d" stroke-width="2" opacity=".14"/>
+ <!-- soft reflected sun patch behind partner -->
+ <ellipse cx="222" cy="755" rx="160" ry="62" fill="#fff5d9" opacity=".48" filter="url(#blur)"/>
+ <path d="M213 309L342 330L413 860L176 919Z" fill="url(#sunlight)" opacity=".35"/>
+</svg>
