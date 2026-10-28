@@ -2,7 +2,7 @@
   "id": "./index.html",
   "name": "すまぽっけ — 持ち物チェックと相棒育成",
   "short_name": "すまぽっけ",
-  "description": "持ち物チェックと相棒育成。端末に自動保存します。",
+  "description": "前日準備、当日の確認、時間割・天気の候補提案。端末保存とアカウント連携による引き継ぎに対応。",
   "lang": "ja",
   "start_url": "./index.html",
   "scope": "./",
@@ -13,6 +13,12 @@
     {
       "src": "assets/app_icon.png",
       "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     }
